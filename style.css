@@ -25,10 +25,20 @@ body{
 
 h1{
 color: white;
-
+background-color:rgb(252, 3, 186);
 }
 
 span{
+
+    color: rgb(252, 3, 186);
+    
+}
+
+#bar{
+    background-color:white ;
+}
+
+#rgb{
 
     color: white;
 }

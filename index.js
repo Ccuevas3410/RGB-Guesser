@@ -1,23 +1,26 @@
 var squares = document.querySelectorAll('.square');
 var spanRgb = document.querySelector("#rgb");
 var messageDisplay = document.getElementById("message");
+var playAgain_newColors = document.getElementById("playAgain_newColors");
 var h1 = document.querySelector('h1');
-
-
 var colors = []
+
 
 function getRandomInt(max) {
     return Math.floor(Math.random() * Math.floor(max));
-}
+}   
 function randomColor() {
     var x = Math.floor(Math.random() * 256);
     var y = Math.floor(Math.random() * 256);
     var z = Math.floor(Math.random() * 256);
-    var bgColor = "rgb(" + x + "," + y + "," + z + ")";
+    var bgColor = "rgb(" + x + ", " + y + ", " + z + ")";
     return bgColor;
 }
 
 
+function initialize(){
+
+//ADDING COLORS TO SQUARES AND TO LIST
 for (var i = 0; i < squares.length; i++) {
 
     //Adding initial colors to squares
@@ -25,11 +28,15 @@ for (var i = 0; i < squares.length; i++) {
     //Using a list to keep track of RGB colors
     colors.push(squares[i].style.backgroundColor);
 
-
+}
 }
 
-//Choosing a random color and 
-pickedColor = colors[getRandomInt(5)];
+
+initialize();
+
+
+//Choosing a random colo
+pickedColor = colors[getRandomInt(squares.length)];
 spanRgb.textContent = pickedColor;
 
 
@@ -43,7 +50,8 @@ for (var j = 0; j < squares.length; j++) {
 
         if (clickedColor === pickedColor){
             messageDisplay.textContent = "Correct!";
-            correctAnswer(pickedColor);
+            playAgain_newColors.textContent = "Play again";
+            correctAnswer(clickedColor);
 
         } else {
             messageDisplay.textContent = "Wrong, try again!";
@@ -59,10 +67,20 @@ for (var j = 0; j < squares.length; j++) {
 
 function correctAnswer(color){
 
+
+    //Making all squares change color to be equal to the chosen color
     for (var i = 0; i <squares.length; i++){
             squares[i].style.backgroundColor = color;
 
 
     }
+    //Making H1 background color to match pickedColor
     h1.style.backgroundColor = color;
 }
+
+playAgain_newColors.addEventListener("click",function(){
+
+h1.style.backgroundColor = "rgb(252, 3, 186)";
+initialize();
+
+});
