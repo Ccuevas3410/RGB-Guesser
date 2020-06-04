@@ -1,6 +1,8 @@
 var squares = document.querySelectorAll('.square');
 var spanRgb = document.querySelector("#rgb");
 var messageDisplay = document.getElementById("message");
+var h1 = document.querySelector('h1');
+
 
 var colors = []
 
@@ -41,6 +43,7 @@ for (var j = 0; j < squares.length; j++) {
 
         if (clickedColor === pickedColor){
             messageDisplay.textContent = "Correct!";
+            correctAnswer(pickedColor);
 
         } else {
             messageDisplay.textContent = "Wrong, try again!";
@@ -49,4 +52,17 @@ for (var j = 0; j < squares.length; j++) {
     });
 
 
+}
+
+
+//Function to make all squares the CORRECT color
+
+function correctAnswer(color){
+
+    for (var i = 0; i <squares.length; i++){
+            squares[i].style.backgroundColor = color;
+
+
+    }
+    h1.style.backgroundColor = color;
 }
