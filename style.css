@@ -11,13 +11,14 @@ body{
     float: left;
 
     margin: 1.66%;
+    transition: all 0.5s;
 }
 
 #container{
 
     margin: 0 auto;
    max-width: 600px;
-   padding-top: 15%;
+   padding-top: 2%;
 }
 
 h1{
@@ -56,10 +57,26 @@ text-transform: uppercase;
 background: none;
 height: 100%;
 font-weight: 700;
+letter-spacing: 1px;
+font-size: inherit;
+font-family: 'Metal Mania', cursive, 'Montserrat';
+transition: all 0.4s;
+}
+
+button:hover{
+
+    color:white;
+    background-color:rgb(252, 3, 186);
 }
 
 .selected{
 
 
     background-color: rgb(252, 3, 186);
+}
+
+#message{
+
+    display: inline-block ;
+    width: 10%;
 }

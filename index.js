@@ -75,6 +75,8 @@ playAgain_newColors.addEventListener("click", function () {
 
     h1.style.backgroundColor = "rgb(252, 3, 186)";
     initialize(6);
+    messageDisplay.textContent = "";
+
 
 });
 
