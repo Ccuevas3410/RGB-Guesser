@@ -76,13 +76,15 @@ playAgain_newColors.addEventListener("click", function () {
     h1.style.backgroundColor = "rgb(252, 3, 186)";
     initialize(6);
     messageDisplay.textContent = "";
+    this.textContent = "NEW COLORS"; 
 
 
 });
 
 //Toggling SELECTED class on Easy/Hard buttons.
 
-selected = false;
+
+
 easyBtn.addEventListener("click", function () {
     easyBtn.classList.toggle("selected");
     hardBtn.classList.remove("selected");

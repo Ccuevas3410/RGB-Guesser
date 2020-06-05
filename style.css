@@ -11,14 +11,16 @@ body{
     float: left;
 
     margin: 1.66%;
-    transition: all 0.5s;
+    transition: background 0.5s;
+    --webkit--transition: background 0.5s;
+    --moz--transition: background 0.5s;
 }
 
 #container{
 
-    margin: 0 auto;
+    margin: 20px auto;
    max-width: 600px;
-   padding-top: 2%;
+   
 }
 
 h1{
@@ -61,6 +63,9 @@ letter-spacing: 1px;
 font-size: inherit;
 font-family: 'Metal Mania', cursive, 'Montserrat';
 transition: all 0.4s;
+--webkit--transition: all 0.4s;
+    --moz--transition: all 0.4s;
+    outline: none;
 }
 
 button:hover{
@@ -78,5 +83,5 @@ button:hover{
 #message{
 
     display: inline-block ;
-    width: 10%;
+    width: 20%;
 }
